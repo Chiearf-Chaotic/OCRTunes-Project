@@ -42,8 +42,8 @@ class SQLManager:
         self.cursor.execute('''UPDATE {} SET {} WHERE {}'''.format(args["name"], setters, args["condition"]))
         self.commit_changes()
 
-    def select_all_data(self, tbl_name, condition=""):
-        if connector == "":
+    def select_all_data(self, tbl_name, condition=None):
+        if connector is None:
             self.cursor.execute('''SELECT * FROM {}'''.format(tbl_name))
         else:
             self.cursor.execute('''SELECT * FROM {} WHERE {}'''.format(tbl_name, condition))

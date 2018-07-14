@@ -20,7 +20,9 @@ db = SQLManager(db_url)
 #  playlist_db = SQLManager(playlist_db)
 
 # --  retrieve all data from user database. --
-# db.create_table(name=db_user_table, fields=[""])
+# Create a table if it doesn't exist.
+db.create_table(name=db_user_table, fields=["'Name' TEXT", "'DoB' TEXT", "'Favourite Artist' TEXT", "'Favourite Genre' TEXT"])
+db.select
 
 
 def main():
