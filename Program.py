@@ -25,6 +25,11 @@ print(cached_data)
 
 
 def main():
+    """
+    Offers the end-user a menu, with options of manage account or playlists. Depending on the option, certain function
+    will be executed.
+    """
+
     start_menu = Menu(35)
     start_menu.setTitle("Start Menu")
     start_menu.addItem("Manage Account")  # option 1
