@@ -23,5 +23,23 @@ class User:
     def get_fav_genre(self):
         return self.genre
 
-# class Playlist:
-#   def
+
+class Song:
+    def __init__(self, title, length, genre, artist):
+        self.title = title
+        self.length = length
+        self.genre = genre
+        self.artist = artist
+
+    def get_title(self):return self.title
+    def get_length(self): return self.length
+    def get_genre(self): return self.genre
+    def get_artist(self): return self.artist
+
+    def set_title(self, new_title): self.title = new_title
+    def set_length(self, new_length): self.length = new_length
+    def set_genre(self, new_genre): self.genre = new_genre
+    def set_artist(self, new_artist): self.artist = new_artist
+
+
+#class Playlist:

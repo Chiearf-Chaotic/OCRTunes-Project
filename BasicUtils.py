@@ -102,5 +102,5 @@ class Menu:
             for option in options:
                 if answer == option:
                     return option
-        else:  # We basically loop the function logically until we get an acceptable option.
+        else:  # We logically loop the function itself until we get an acceptable option.
             return self.getOption

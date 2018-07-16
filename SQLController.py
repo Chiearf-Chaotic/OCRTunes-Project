@@ -43,7 +43,7 @@ class SQLManager:
         self.commit_changes()
 
     def select_all_data(self, tbl_name, condition=None):
-        if connector is None:
+        if condition is None:
             self.cursor.execute('''SELECT * FROM {}'''.format(tbl_name))
         else:
             self.cursor.execute('''SELECT * FROM {} WHERE {}'''.format(tbl_name, condition))

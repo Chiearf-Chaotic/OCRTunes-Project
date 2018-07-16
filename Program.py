@@ -11,18 +11,17 @@ from DataObjects import *
 db_url = "Database.db"
 db_user_table = "Users"
 db_playlist_table = "Playlists"
-
 users = {}
-# -- form a connection to our user database. --
 db = SQLManager(db_url)
 
+db.create_table(name=db_user_table,
+                fields=["'Name' TEXT", "'Password' TEXT", "'DoB' TEXT", "'Favourite Artist' TEXT",
+                        "'Favourite Genre' TEXT"])
+# db.create_table(name=db_playlist_table,
+#                fields=["'Artist' TEXT", "'Genre' TEXT"])
 
-#  playlist_db = SQLManager(playlist_db)
-
-# --  retrieve all data from user database. --
-# Create a table if it doesn't exist.
-db.create_table(name=db_user_table, fields=["'Name' TEXT", "'DoB' TEXT", "'Favourite Artist' TEXT", "'Favourite Genre' TEXT"])
-db.select
+cached_data = dict(db.select_all_data(db_user_table))
+print(cached_data)
 
 
 def main():
@@ -55,6 +54,4 @@ def manageAccounts():
 
 
 if __name__ == '__main__':
-    print(["1", "2", "3"])
-    print(['1', '2', '3'])
-    #   main()
+    main()
