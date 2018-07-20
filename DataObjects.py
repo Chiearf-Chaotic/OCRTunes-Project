@@ -1,4 +1,8 @@
 class User:
+    """
+    Note:
+    This class may be changed into a user manager, controlling the extraction and boolean logics.
+    """
     def __init__(self, name, password, dob, artist, genre):
         self.username = name
         self.password = password
@@ -42,4 +46,13 @@ class Song:
     def set_artist(self, new_artist): self.artist = new_artist
 
 
-#class Playlist:
+class Playlist:
+    def __init__(self, title, length, genre, artist):
+        self.title = title
+        self.songs = []
+        self.length = length
+        self.genre = genre
+        self.artist = artist
+
+    def auto_generate(self, songs):
+        return False
